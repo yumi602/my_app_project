@@ -1,0 +1,7 @@
+<% flash.each do |message_type, message| %>
+  <% alert_class = message_type.to_sym == :success ? "alert-success" : "alert-warning" %>
+
+  <div class="alert <%= alert_class %> shadow-lg">
+    <span><%= message %></span>
+  </div>
+<% end %>
