@@ -39,7 +39,11 @@
                   <li><i class="bi bi-person"></i>名前</li>
                 </ul>
 
-                
+                <ul class="card-text">
+                  <% cat.foods.each do |food| %>
+                    <li>餌の情報: <%= food.body %></li>
+                  <% end %>
+                </ul>
 
               </div>
             </div>

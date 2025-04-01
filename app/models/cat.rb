@@ -3,4 +3,5 @@ class Cat < ApplicationRecord
   validates :age, allow_blank: true, numericality: { only_integer: true }
 
   belongs_to :user
+  has_many :foods, dependent: :destroy
 end
