@@ -16,7 +16,7 @@ class CatNamesController < ApplicationController
         session[:cat_registration] = @form.attributes
       end
 
-      redirect_to new_cat_food_path
+      redirect_to new_food_name_path
     else
       render :new, status: :unprocessable_entity
     end

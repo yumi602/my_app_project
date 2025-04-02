@@ -1,5 +1,5 @@
 <div class="container mx-auto pt-3">
-  <%= link_to 'ねこの登録', "#", class: "btn btn-lg btn-primary" %>
+  <%= link_to 'ねこの登録', new_cat_name_path, class: "btn btn-lg btn-primary" %>
 
   <!-- ねこ情報一覧 -->
   <div class="flex flex-wrap">
@@ -9,7 +9,11 @@
           <div id="cat-id-<%= cat.id %>">
             <div class="card bg-base-100 shadow-xl">
               <figure>
-                  <%= image_tag "okumono-cat37.png", class: "w-full h-48 object-cover" %>
+                <% if cat.cat_image.present? %>
+                  <%= image_tag cat.cat_image.url, class: "w-full h-48 object-cover" %>
+                <% else %>
+                  <%= image_tag "nekogara31.png", class: "w-full h-48 object-cover" %>
+                <% end %>
               </figure>
               <div class="card-body">
                 <div class="flex items-center ">

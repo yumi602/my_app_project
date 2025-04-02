@@ -18,11 +18,11 @@ class CatInfoForm
   end
 
   def save
-    cat = CatDetail.create(name: name, age: age, user_id: user_id, cat_image: cat_image)
+    cat = Cat.create(name: name, age: age, user_id: user_id, cat_image: cat_image)
 
     return false unless cat.persisted?
 
-    Food.create(cat_detail_id: cat.id, food: food, body: body, food_image: food_image)
+    Food.create(cat_id: cat.id, food: food, body: body, food_image: food_image)
 
     true
   end
