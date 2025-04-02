@@ -1,0 +1,26 @@
+<div class="flex-grow flex items-center justify-center">
+  <div class="w-full md:w-3/4 lg:w-2/3 max-w-2xl">
+    <h2 class="text-3xl font-bold mb-6">猫の餌情報を入力</h2>
+
+    <%= form_with model: @form, url: food_names_path, method: :post, local: true do |f| %>
+      <div class="form-control w-full mb-4">
+        <%= f.label :food, "餌の名前", class: "label" %>
+        <%= f.text_field :food, class: "input input-bordered w-full" %>
+      </div>
+      <div class="form-control mb-4">
+        <%= f.label :body, "コメント", class: "label" %>
+        <%= f.text_field :body, class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="form-control mb-4">
+        <%= f.label :food_image, "画像アップロード", class: "label" %>
+        <%= f.file_field :food_image, class: "input input-bordered w-full", accept: 'image/*' %>
+      </div>
+
+      <div class="flex justify-between mb-4">
+        <%= link_to "戻る", new_cat_name_path, class: "btn btn-primary w-1/2 mr-2" %>
+        <%= f.submit "次へ", class: "btn btn-primary w-1/2" %>
+      </div>
+    <% end %>
+  </div>
+</div>
